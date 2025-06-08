@@ -1,4 +1,4 @@
-const items = []
+let items = []
 
 function addItem () {
     const itemName = document.querySelector("#item").value
@@ -32,8 +32,10 @@ function showItemsList() {
                 </button>
             </div>
           </div>
-          `
+        `
     })
+
+    localStorage.setItem("items", JSON.stringify(items))
 }
 
 function removeItem(itemName) {
@@ -62,3 +64,12 @@ function checkItem(itemName) {
    showItemsList()
 }
 
+function verifyLocalStorageItems() {
+   const LocalStorageItems = localStorage.getItem("items") 
+   if (LocalStorageItems) {
+    items = JSON.parse(LocalStorageItems)
+    showItemsList()
+   }
+}
+
+verifyLocalStorageItems()
