@@ -86,8 +86,9 @@ main {
         &:focus {
             border: 2px solid var(--color-brand);
         }
+    }
 
-        button {
+    button {
             background: var(--color-brand);
             border: none;
             color: var(--always-white);
@@ -103,7 +104,6 @@ main {
                 background: var(--color-brand-hover);
             }
         }
-    }
 }
 
 .list {
